@@ -1,0 +1,13 @@
+{{ define "main" }} {{ partial "slideshow.html" . }} {{ .Content }}
+<section>
+  <a href="/Neuigkeiten">Neuigkeiten</a><a href="/ueberuns">Über uns</a>
+</section>
+<section>
+  {{ range where site.RegularPages "Type" "infos" }}
+  <article>
+    <h2>{{ .Title }}</h2>
+    {{ .Content }}
+  </article>
+  {{ end }}
+</section>
+{{ end }}

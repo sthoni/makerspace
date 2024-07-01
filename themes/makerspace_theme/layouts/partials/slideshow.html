@@ -1,0 +1,73 @@
+<!-- Slideshow  von W3 Schools https://www.w3schools.com/howto/howto_js_slideshow.asp-->
+<div id="slideshowContainerAussenWeiß">
+  <!-- Dieser Div wurde Hinzugefügt um das Seitenverhältnis für alle Bilder gleich zu haben -->
+  <div class="slideshow-container">
+    <!-- Container vom Bild mit Pfeilen etc.-->
+    <div class="mySlides fade">
+      <!-- Div von den Elementen mit mit Bildern und Pfeilen  -->
+      <div class="numbertext"><p>1 / 3</p></div>
+      <!-- Zahl oben Links -->
+      <a href="/TaschenlampeFürDieNachhaltigkeit.html">
+        <!-- Hyperlink (Macht, dass man weitergeleitet wirdd)=-->
+        <img
+          src="https://cdn.glitch.global/373a89c7-55ea-4386-8afe-3a6112a39fc4/joule-thief.jpg?v=1712069367323"
+          class="imgSlideshow"
+        /><!-- Bild-->
+        <div class="textSlideshow">
+          <!-- Text unten div-->
+          Taschenlampen für die Nachhaltigkeit
+        </div>
+      </a>
+    </div>
+    <!-- Erstes Bild endet. Wenn sie mehr Slides haben wollen müssen sie dieses Div kopieren-->
+
+    <div class="mySlides fade">
+      <!-- Nächste Slide -->
+      <div class="numbertext"><p>2 / 3</p></div>
+      <!-- Zahl oben Links -->
+      <a href="/DieElektronikAGHebtAb.html"
+        ><!-- Hyperlink (Macht, dass man weitergeleitet wirdd)=-->
+        <img
+          src="https://cdn.glitch.global/373a89c7-55ea-4386-8afe-3a6112a39fc4/stg-elektronik-ag.jpeg?v=1712069568669"
+          class="imgSlideshow"
+        /><!-- Bild-->
+        <div class="textSlideshow">Die Elektronik-AG hebt ab</div>
+        <!-- Text unten div-->
+      </a>
+    </div>
+
+    <div class="mySlides fade">
+      <!-- Nächste Slide-->
+      <div class="numbertext"><p>3 / 3</p></div>
+      <!-- Zahl oben Links -->
+      <a href="/Steinbart-SchlüsselanhängerAusDem3DDrucker.html">
+        <!-- Hyperlink (Macht, dass man weitergeleitet wirdd)=-->
+        <img
+          src="https://cdn.glitch.global/373a89c7-55ea-4386-8afe-3a6112a39fc4/3d-druck.jpg?v=1712070948069"
+          class="imgSlideshow"
+        />
+        <!-- Bild-->
+        <div class="textSlideshow">
+          <!-- Text unten div-->
+          Steinbart-Schlüsselanhänger aus dem 3d-Drucker
+        </div>
+      </a>
+    </div>
+
+    <!-- Pfeiltasten. Rufen die plusSlides Funktion auf mit dem Parameter von der Taste zb  -1 = zurück. Mehr bei Javascript -->
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
+  <!-- Slideshow bild endet -->
+</div>
+<!-- Slideshow endet ganz-->
+
+<div class="dotDivSlideShow">
+  <!-- Punkte unter der Slideshow-->
+  <span class="dot" onclick="currentSlide(1)"></span
+  ><!-- Ruft currentSlide() funktion mit passendem Parameter-->
+  <span class="dot" onclick="currentSlide(2)"></span
+  ><!-- Hier auch -->
+  <span class="dot" onclick="currentSlide(3)"></span
+  ><!-- Hier auch -->
+</div>

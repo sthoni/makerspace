@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html
+  lang="de-de"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+  Technik AG | Steinbart MakerSpace
+</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+ 
+      <script src="/js/main.js"></script>
+
+<script>
+  
+
+  let slideIndex = 1; 
+  let slideTimeout;
+  document.addEventListener("DOMContentLoaded", () => {
+    showSlides(slideIndex); 
+  });
+
+  
+  function showSlides(n) {
+    let slides = document.getElementsByClassName("mySlides"); 
+    let dots = document.getElementsByClassName("dot"); 
+
+    
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    
+    slides[slideIndex - 1].style.display = "block"; 
+    dots[slideIndex - 1].className += " active"; 
+
+    
+    slideTimeout = setTimeout(function () {
+      
+      plusSlides(1); 
+    }, 6000);
+  }
+
+  
+  function plusSlides(n) {
+    clearTimeout(slideTimeout); 
+    showSlides((slideIndex += n)); 
+  }
+
+  
+  function currentSlide(n) {
+    clearTimeout(slideTimeout); 
+    showSlides((slideIndex = n)); 
+  }
+</script>
+
+  </head>
+  <body>
+    <header>
+<a href="/"
+  ><img src="/images/logo.png" width="502" height="497"
+/></a>
+
+<h1>Steinbart MakerSpace</h1>
+<nav>
+  <a class="animation" href="/index.html">Home</a>
+  <a class="animation" href="/news.html">Neuigkeiten</a>
+  <a class="animation" href="/ueberuns.html">Über uns</a>
+</nav>
+</header>
+    <main>
+<h1>Technik AG</h1>
+
+ 
+<time datetime="2024-01-13T09:00:00-07:00">January 13, 2024</time>
+
+<p><img src="/pcs.jpg" alt="MakerSpace"></p>
+<p>Die Technik-AG findet jeden Freitag um 13:40 Uhr in den Computerräumen im Neubau (Raum 241) statt. Die AG wird geleitet von Herrn Roschow, Herrn Heupp und Herrn Thon. Ihr könnt frei an euren eigenen Projekten mit den Werkzeugen vom Makerspace arbeiten, oder anderen helfen oder lernen.</p>
+ 
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/info/">Info</a></li>
+    </ul>
+  </div>
+ </main>
+    <footer><p>Copyright 2024.</p>
+</footer>
+  </body>
+</html>

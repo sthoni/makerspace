@@ -1,0 +1,375 @@
+/* 
+  Globale Stile für wiederkehrende Elemente wie Header, Logo etc. 
+  Detailseiten haben eigene CSS-Dateien für spezifische Elemente.
+*/
+
+/* Schriftarten importieren */
+@font-face {
+  font-family: "CyberFont";
+  src: url("https://cdn.glitch.global/373a89c7-55ea-4386-8afe-3a6112a39fc4/Dune_Rise.ttf?v=1710342980690");
+}
+
+@font-face {
+  font-family: "textFontCyber";
+  src: url("https://cdn.glitch.global/373a89c7-55ea-4386-8afe-3a6112a39fc4/Unitblock-mLAwm.ttf?v=1710343053106");
+}
+
+/* Root-Variablen für konsistente und einfache Anpassungen */
+:root {
+  --fs-sm: clamp(0.8rem, 0.42vi + 0.69rem, 1.03rem);
+  --fs-base: clamp(1rem, 0.68vi + 0.83rem, 1.38rem);
+  --fs-md: clamp(1.25rem, 1.06vi + 0.99rem, 1.83rem);
+  --fs-lg: clamp(1.56rem, 1.6vi + 1.16rem, 2.44rem);
+  --fs-xl: clamp(1.95rem, 2.37vi + 1.36rem, 3.26rem);
+  --fs-xxl: clamp(2.44rem, 3.45vi + 1.58rem, 4.34rem);
+  --fs-xxxl: clamp(3.05rem, 4.97vi + 1.81rem, 5.79rem);
+
+  --primary-color: black;
+  --secondary-color: white;
+  --background-color: white;
+  --accent-color: #34ba32;
+  --font-h1: "CyberFont", sans-serif;
+  --font-p: "textFontCyber", sans-serif;
+  --padding: 1rem;
+  --max-text-width: 65ch;
+}
+
+/* Header-Stile */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--background-color);
+  box-shadow: 0px 0px 10px 0px #000000;
+  padding: var(--padding);
+  gap: 2rem;
+  border-bottom: 10px solid var(--accent-color);
+
+  img {
+    aspect-ratio: 1 / 1;
+    width: auto;
+    max-height: 5rem;
+  }
+}
+/* Globale Textstile */
+h1 {
+  font-family: var(--font-h1);
+  color: var(--primary-color);
+  font-size: var(--fs-lg);
+}
+
+h2 {
+  font-family: var(--font-p);
+  color: var(--primary-color);
+  font-size: var(--fs-lg);
+}
+
+p {
+  color: var(--primary-color);
+  font-family: var(--font-p);
+  max-width: var(--max-text-width);
+  margin: auto;
+  font-size: var(--fs-md);
+  padding: var(--padding);
+  line-height: 1.5;
+  text-shadow: 1px 1px 0 var(--secondary-color),
+    -1px -1px 0 var(--secondary-color), 1px -1px 0 var(--secondary-color),
+    -1px 1px 0 var(--secondary-color);
+}
+
+footer {
+  background-color: var(--secondary-color);
+  padding: var(--padding);
+  box-shadow: 0px 0px 33px 0px #000000;
+  margin-top: 100px;
+  text-align: center;
+
+  p {
+    color: var(--primary-color);
+  }
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  a {
+    text-decoration: none;
+    font-family: var(--font-p);
+    color: var(--primary-color);
+    font-size: var(--fs-md);
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: translate(0.25rem, 0);
+    }
+  }
+}
+
+/* Body-Stile */
+body {
+  margin: 0;
+  font-size: var(--fs-base);
+  background: #e0e8ea;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    var(--accent-color) 42px,
+    var(--accent-color) 42px
+  );
+}
+
+main > p {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 2rem auto;
+  box-shadow: 0px 0px 5px 0px #000000;
+}
+
+main section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-block: 4rem;
+  padding-inline: 2rem;
+}
+
+main section:nth-child(2n + 1) {
+  background-color: #34ba32;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    white 42px,
+    white 42px
+  );
+}
+
+article > p {
+  padding-inline: 0;
+}
+
+article img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+main article {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-block: 2rem;
+  box-shadow: 0px 0px 5px 0px #000000;
+}
+
+main section > a {
+  display: block;
+  background-color: var(--secondary-color);
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.1s ease-in; /* Animationsart z.B ease in*/
+  box-shadow: 0px 0px 5px 0px #000000;
+  font-family: var(--font-p);
+  color: var(--primary-color);
+  font-size: var(--fs-lg);
+
+  &:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+  }
+}
+
+/* Media Queries für Responsive Design */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  a p {
+    font-size: var(--fs-base);
+    margin: 5px 0 0 10px;
+  }
+
+  main section {
+    flex-direction: column;
+  }
+
+  main p {
+    margin: 2rem;
+  }
+}
+
+/* Bilder bei Slideshow*/
+img {
+  vertical-align: middle; /* Zentriert Vertikal */
+  width: 100%; /* Maximale Breite von der Slideshow*/
+  height: 100%; /* Maximale höhe*/
+}
+
+/* Container für Bild und Pfile etc. (Nicht weiße umrandung und ändert sich nach jedem Bildwechsel)*/
+.slideshow-container {
+  height: 600px; /* Feste Höhe für den Slideshow-Container */
+  width: 100%; /* Bild nimmt gesamte Breite von der Slideshow ein*/
+  position: relative;
+  display: flex;
+  margin-top: 20px; /* Macht dass die Bilder nicht ganz oben sind*/
+  justify-content: center; /* Zentriert horizontal*/
+  align-items: center; /* Zentriert Vertikal*/
+}
+
+#slideshowContainerAussenWeiß {
+  width: 80%; /* Slideshow nimmt*/
+  height: 600px; /* Höhe des Rahmens */
+  background-color: white;
+  margin: 2rem auto;
+  border-radius: 20px; /* Rundet Slideshow ab*/
+  overflow: hidden; /* Macht dass Textfelld hinter der slideshow ist und nicht rauskommt*/
+  box-shadow: 0px 0px 10px 0px #000000; /* Schatten */
+
+  /* Zentriert Elemente*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Pfeile */
+.prev,
+.next {
+  cursor: pointer; /* Ändert Mauszeiger zu pointer*/
+
+  position: absolute;
+  top: 50%; /* Zentriert Vertikal*/
+  padding: 16px; /* Innenabstand */
+  color: green;
+  font-weight: bold; /* Macht Pfeile dicker*/
+  font-size: var(--fs-lg); /* Schriftgröße*/
+  border-radius: 3px; /* Abrunden*/
+
+  /* Animation*/
+  transition: 0.6s ease;
+}
+
+/* Positioniert den Rechten Pfeil nach Rechts */
+.next {
+  right: 0;
+}
+
+/* Positioniert den linken Pfeil nach links */
+.prev {
+  left: 0;
+}
+
+/* Ändert die Hintergrundfarbe von den Pfeilen Bei Hover */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Text unten*/
+.textSlideshow {
+  color: #f2f2f2;
+  font-size: var(--fs-base);
+  padding: 32px 32px; /* Innenabstand*/
+  position: absolute;
+  bottom: 0; /* Positioniert ganz unten*/
+
+  /* Zentriert*/
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+
+  text-align: center; /*Zentriert text*/
+  background-color: rgba(0, 0, 0, 0.7); /* Schwarz mit bisschen Durchsichtig*/
+  font-family: Arial;
+}
+
+/* Number text (1/3 zum Beispiel) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: var(--fs-md);
+  padding: 8px 12px;
+  position: absolute; /* Macht das der Text in der Slideshow bleibt*/
+  width: 80px;
+  top: 0; /* Postioniert ganz oben*/
+  font-family: Arial;
+}
+
+/* Punkte unter der SLideshow */
+.dot {
+  cursor: pointer; /* Ändert Mauszeiger*/
+  height: 15px;
+  width: 15px;
+  margin: 2px;
+  background-color: #bbb;
+  border-radius: 50%; /* Rundet zu kreis*/
+  display: inline-block; /* Inline Block*/
+  transition: background-color 0.6s ease; /* Animation */
+}
+
+/* Eltern Div von den Punkten*/
+.dotDivSlideShow {
+  text-align: center; /* Zentriert*/
+  margin-top: 10px; /* Macht abstand oben*/
+}
+
+/* Farbe wenn es Aktiv ist*/
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Slide bild animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+/* Die Animation ändert die Durchsichtigkeit */
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Änderungen für das Aussehen beim Handy */
+@media only screen and (max-width: 745px) {
+  #slideshowContainerAussenWeiß {
+    width: 80%; /* Slideshow nimmt*/
+    height: auto; /* Ändere die Höhe auf automatisch, damit sie sich dem Inhalt anpasst */
+    background-color: white;
+    margin: auto;
+    margin-top: 150px; /* Oben abstand */
+    border-radius: 20px; /* Rundet Slideshow ab*/
+    overflow: hidden; /* Macht dass Textfeld hinter der Slideshow ist und nicht rauskommt*/
+    box-shadow: 0px 0px 33px 0px #000000; /* Schatten */
+
+    /* Zentriert Elemente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .slideshow-container {
+    display: flex; /* Verwende Flexbox-Layout */
+    flex-direction: row; /* Zeige die Slides horizontal an */
+    overflow-x: auto; /* Füge eine horizontale Scrollleiste hinzu, falls erforderlich */
+    -webkit-overflow-scrolling: touch; /* Aktiviere flüssiges Scrollen für Webkit-basierte Browser */
+    max-height: 300px; /* Setze eine maximale Höhe für die Slideshow */
+  }
+
+  .mySlides {
+    flex: 0 0 auto; /* Verhindere, dass die Slides vertikal gestreckt werden */
+    width: 100%; /* Jede Slide nimmt die gesamte Breite des Bildschirms ein */
+    margin-right: 10px; /* Füge etwas Abstand zwischen den Slides hinzu */
+  }
+}

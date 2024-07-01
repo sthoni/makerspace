@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infos on Steinbart MakerSpace</title>
+    <link>http://localhost:1313/infos/</link>
+    <description>Recent content in Infos on Steinbart MakerSpace</description>
+    <generator>Hugo</generator>
+    <language>de-de</language>
+    <lastBuildDate>Mon, 15 Jan 2024 09:00:00 -0700</lastBuildDate>
+    <atom:link href="http://localhost:1313/infos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Was ist ein MakerSpace?</title>
+      <link>http://localhost:1313/infos/makerspace/</link>
+      <pubDate>Mon, 15 Jan 2024 09:00:00 -0700</pubDate>
+      <guid>http://localhost:1313/infos/makerspace/</guid>
+      <description>Ein Makerspace ist ein Ort wo Leute zusammenkommen um Kreative Ideen umzusetzen die mit Technik in verbindung stehen. Oft gibt es Geräte, wie zum Beispiel 3D-Drucker, oder Lötkolben, die von Mehreren Leuten benutzt werden, da viele sowas nicht selbst haben. Makerspaces sind nicht nur da um etwas zu entwickeln, sondern auch um sich mit anderen Leuten auszutauschen, zusammenzuarbeiten und zu lernen.</description>
+    </item>
+    <item>
+      <title>Möglichkeiten im Makerspace</title>
+      <link>http://localhost:1313/infos/moeglichkeiten/</link>
+      <pubDate>Sun, 14 Jan 2024 09:00:00 -0700</pubDate>
+      <guid>http://localhost:1313/infos/moeglichkeiten/</guid>
+      <description>Im Makerspace gibt es viele Werkzeuge um etwas Neues zu entwickeln. Es stehen Lötkolben, PCs, ein Green Screen, Lego Mindestorms, Arduinos mit vielen Sensoren und ein 3D-Drucker zur verfügung. Ihr werdet nicht nur Wekkzeuge bekommen sondern auch Hilfe von anderen Schülern und Lehrern.&#xA;Der Steinbart Podcast wird im Makerspace gedreht.&#xA;Mit den Computern, könnt ihr beispielsweise Spiele mit Scratch, Unity oder 3D-Modelle erstellen.</description>
+    </item>
+    <item>
+      <title>Technik AG</title>
+      <link>http://localhost:1313/infos/technikag/</link>
+      <pubDate>Sat, 13 Jan 2024 09:00:00 -0700</pubDate>
+      <guid>http://localhost:1313/infos/technikag/</guid>
+      <description>Die Technik-AG findet jeden Freitag um 13:40 Uhr in den Computerräumen im Neubau (Raum 241) statt. Die AG wird geleitet von Herrn Roschow, Herrn Heupp und Herrn Thon. Ihr könnt frei an euren eigenen Projekten mit den Werkzeugen vom Makerspace arbeiten, oder anderen helfen oder lernen.</description>
+    </item>
+  </channel>
+</rss>

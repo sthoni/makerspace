@@ -1,0 +1,12 @@
+{{- with resources.Get "images/logo.png" }}
+<a href="/"
+  ><img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}"
+/></a>
+
+<h1>{{ site.Title }}</h1>
+<nav>
+  <a class="animation" href="/index.html">Home</a>
+  <a class="animation" href="/news.html">Neuigkeiten</a>
+  <a class="animation" href="/ueberuns.html">Über uns</a>
+</nav>
+{{- end }}

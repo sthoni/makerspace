@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html
+  lang="de-de"
+  dir="ltr"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+  Was ist ein MakerSpace | Steinbart MakerSpace
+</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+ 
+      <script src="/js/main.js"></script>
+
+<script>
+  
+
+  let slideIndex = 1; 
+  let slideTimeout;
+  document.addEventListener("DOMContentLoaded", () => {
+    showSlides(slideIndex); 
+  });
+
+  
+  function showSlides(n) {
+    let slides = document.getElementsByClassName("mySlides"); 
+    let dots = document.getElementsByClassName("dot"); 
+
+    
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    
+    slides[slideIndex - 1].style.display = "block"; 
+    dots[slideIndex - 1].className += " active"; 
+
+    
+    slideTimeout = setTimeout(function () {
+      
+      plusSlides(1); 
+    }, 6000);
+  }
+
+  
+  function plusSlides(n) {
+    clearTimeout(slideTimeout); 
+    showSlides((slideIndex += n)); 
+  }
+
+  
+  function currentSlide(n) {
+    clearTimeout(slideTimeout); 
+    showSlides((slideIndex = n)); 
+  }
+</script>
+
+  </head>
+  <body>
+    <header>
+<a href="/"
+  ><img src="/images/logo.png" width="502" height="497"
+/></a>
+
+<h1>Steinbart MakerSpace</h1>
+<nav>
+  <a class="animation" href="/index.html">Home</a>
+  <a class="animation" href="/news.html">Neuigkeiten</a>
+  <a class="animation" href="/ueberuns.html">Über uns</a>
+</nav>
+</header>
+    <main>
+<h1>Was ist ein MakerSpace</h1>
+
+ 
+<time datetime="2024-01-15T09:00:00-07:00">January 15, 2024</time>
+
+<p>![MakerSpace](<a href="https://cdn.glitch.global/373a89c7-55ea-4386-8afe-3a6112a39fc4/Dario">https://cdn.glitch.global/373a89c7-55ea-4386-8afe-3a6112a39fc4/Dario</a> Mustafa und Diren waren hier 2017?v=1712771169300)
+/&gt;
+Ein Makerspace ist ein Ort wo Leute zusammenkommen um Kreative Ideen umzusetzen die mit Technik in verbindung stehen. Oft gibt es Geräte, wie zum Beispiel 3D-Drucker, oder Lötkolben, die von Mehreren Leuten benutzt werden, da viele sowas nicht selbst haben. Makerspaces sind nicht nur da um etwas zu entwickeln, sondern auch um sich mit anderen Leuten auszutauschen, zusammenzuarbeiten und zu lernen.</p>
+ 
+  <div>
+    <div>Tags:</div>
+    <ul>
+        <li><a href="/tags/info/">Info</a></li>
+    </ul>
+  </div>
+ </main>
+    <footer><p>Copyright 2024.</p>
+</footer>
+  </body>
+</html>

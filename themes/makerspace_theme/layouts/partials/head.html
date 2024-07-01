@@ -1,0 +1,62 @@
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width" />
+<title>
+  {{ if .IsHome }}{{ site.Title }}{{ else }}{{ printf "%s | %s" .Title
+  site.Title }}{{ end }}
+</title>
+{{ partialCached "head/css.html" . }} {{ partialCached "head/js.html" . }}
+<script>
+  // Code von W3 Schools mit veränderungen https://www.w3schools.com/howto/howto_js_slideshow.asp
+
+  let slideIndex = 1; //Variable von der jetzigen slide
+  let slideTimeout;
+  document.addEventListener("DOMContentLoaded", () => {
+    showSlides(slideIndex); //Erste slide wird geöffnet
+  });
+
+  //Diese Funktion zeigt die slide die im Parameter ist
+  function showSlides(n) {
+    let slides = document.getElementsByClassName("mySlides"); //Slides werden gefunden um sie später zu deaktivieren
+    let dots = document.getElementsByClassName("dot"); // Punkte werden gefunden um sie umzuschalten
+
+    // Versteckt alle Slides. Wenn das nicht passiert werden alle drei bilder auf der Slideshow angezeigt
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    // Macht, dass die Slide nach dem letzten Slide bei 1 anfängt
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    // Sorgt dafür dass die punkte nicht grau werden damit einer später die richtige SLide anzeigt. Deaktiviert Active
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    // Zeige den aktuellen Slide an und setze die "active" Klasse für den entsprechenden Punkt
+    slides[slideIndex - 1].style.display = "block"; // Zeigt Bild
+    dots[slideIndex - 1].className += " active"; //Zeigt
+
+    // Automatisches umschalten der Slides mit 6 sekunden Timeout
+    slideTimeout = setTimeout(function () {
+      //Setzt Timeout
+      plusSlides(1); // Ändert das Bild
+    }, 6000);
+  }
+
+  // Nächste Slide nach vorne mit Parameter der Bei den Pfeilen eingesetzt wird bei HTML oben
+  function plusSlides(n) {
+    clearTimeout(slideTimeout); //Entfernt das schon angefangene Delay wenn man auf einen Pfeil drückt damit nicht direkt danach sich die slide ändert
+    showSlides((slideIndex += n)); //Zeigt Slide
+  }
+
+  // Vorherige Slide nach hinten mit Parameter der Bei den Pfeilen eingesetzt wird bei HTML oben
+  function currentSlide(n) {
+    clearTimeout(slideTimeout); //Entfernt das schon angefangene Delay wenn man auf einen Pfeil drückt damit nicht direkt danach sich die slide ändert
+    showSlides((slideIndex = n)); //Zeigt Slide
+  }
+</script>

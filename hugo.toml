@@ -1,0 +1,4 @@
+baseURL = 'https://example.org/'
+languageCode = 'de-de'
+title = 'Steinbart MakerSpace'
+theme = 'makerspace_theme'
